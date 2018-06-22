@@ -1,0 +1,36 @@
+<ui:composition template="/template.xhtml"
+				xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+			    xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:define name="conteudo">
+	   
+	   <h2>Novo Contato:</h2>
+	   
+	   <h:form>
+			<h:panelGrid columns="3">
+			   <h:outputLabel value="Nome:* " for="inputNome" />
+			   <h:inputText id="inputNome" value="#{agendaBean.contato.nome}" />
+			   <h:message for="inputNome" />
+			   
+			   <h:outputLabel value="Telefone:* " for="inputTelefone" />
+			   <h:inputText id="inputTelefone" value="#{agendaBean.contato.telefone}" />
+			   <h:message for="inputTelefone" />
+			   
+			   <h:outputLabel value="Data de Nascimento: " for="inputDtNascimento" />
+			   <h:inputText id="inputDtNascimento" value="#{agendaBean.contato.dataDeNascimento}" />
+			   <h:message for="inputDtNascimento" />
+			   
+			   <h:outputLabel value="E-mail: " for="inputEmail" />
+			   <h:inputText id="inputEmail" value="#{agendaBean.contato.email}" />
+			   <h:message for="inputEmail" />
+			   
+			   <h:commandButton value="Cadastrar" action="#{agendaBean.cadastrarContato}"/>
+			   
+			</h:panelGrid>
+		</h:form>
+	   
+	</ui:define>
+
+</ui:composition>
